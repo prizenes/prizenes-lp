@@ -197,6 +197,28 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.hero-visual > img {
+  border: 8px solid var(--white);
+}
+
+.hero-thumbs {
+  position: absolute;
+  left: -26px;
+  bottom: 28px;
+  display: grid;
+  gap: 10px;
+  width: 154px;
+}
+
+.hero-thumbs img {
+  width: 154px;
+  height: 112px;
+  object-fit: cover;
+  border: 5px solid var(--white);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
 .hero-card {
   position: absolute;
   right: -18px;
@@ -261,12 +283,12 @@ section {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white);
-  box-shadow: 0 16px 36px rgba(18, 41, 34, 0.08);
+  box-shadow: 0 18px 42px rgba(18, 41, 34, 0.1);
 }
 
 .photo-grid img {
   width: 100%;
-  height: 250px;
+  height: 280px;
   object-fit: cover;
 }
 
@@ -456,35 +478,51 @@ section {
 }
 
 .staff {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
-  gap: clamp(28px, 5vw, 68px);
-  align-items: center;
   background: var(--paper);
 }
 
 .staff-copy p,
-.staff-card p {
+.staff-list p {
   color: var(--muted);
 }
 
-.staff-card {
+.staff-copy {
+  max-width: 880px;
+  margin-bottom: 34px;
+}
+
+.staff-list {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 24px;
-  align-items: center;
-  padding: 26px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.staff-list article {
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white);
   box-shadow: var(--shadow);
 }
 
-.staff-card img {
-  width: 220px;
-  aspect-ratio: 1;
+.staff-list img {
+  width: 100%;
+  height: 320px;
   object-fit: cover;
-  border-radius: 8px;
+  object-position: center 26%;
+}
+
+.staff-list h3,
+.staff-list p {
+  padding-inline: 22px;
+}
+
+.staff-list h3 {
+  margin-top: 20px;
+}
+
+.staff-list p {
+  margin: 10px 0 24px;
 }
 
 
@@ -590,7 +628,6 @@ footer .note {
   .compare,
   .method-layout,
   .voice,
-  .staff,
   .offer {
     grid-template-columns: 1fr;
   }
@@ -602,7 +639,8 @@ footer .note {
   .problem-grid,
   .reason-grid,
   .photo-grid,
-  .flow-steps {
+  .flow-steps,
+  .staff-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -614,6 +652,10 @@ footer .note {
   .method-layout > img {
     height: 420px;
     min-height: 0;
+  }
+
+  .hero-thumbs {
+    left: 18px;
   }
 
   .offer {
@@ -675,20 +717,24 @@ footer .note {
     margin-top: 12px;
   }
 
+  .hero-thumbs {
+    position: static;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .hero-thumbs img {
+    width: 100%;
+    height: 130px;
+  }
+
   .problem-grid,
   .reason-grid,
   .photo-grid,
-  .flow-steps {
+  .flow-steps,
+  .staff-list {
     grid-template-columns: 1fr;
-  }
-
-  .staff-card {
-    grid-template-columns: 1fr;
-  }
-
-  .staff-card img {
-    width: 100%;
-    max-height: 340px;
   }
 
   .compare-table > div {
